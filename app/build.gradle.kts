@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.pedro.sample"
-        minSdk = 16
+        minSdk = 21
         targetSdk = 34
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = libs.versions.versionName.get()
