@@ -35,4 +35,6 @@ dependencies {
     implementation(libs.rootencoder.library)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
 }
