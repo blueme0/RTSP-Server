@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FileDemoActivity">
+
+    <TextView
+        android:textColor="@color/appColor"
+        android:textColorHint="@color/appColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:textSize="24sp"
+        android:id="@+id/tv_url"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:text="Record Start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_start_stop"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Button
+        android:text="START / STOP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_start_stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_record"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Button
+        android:text="SELECT FILE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_select_file"
+        android:layout_above="@+id/seek_bar"
+        app:layout_constraintStart_toEndOf="@id/btn_re_sync"
+        app:layout_constraintBottom_toTopOf="@id/seek_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp" />
+
+    <Button
+        android:text="RESYNCHRONIZE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seek_bar"
+        android:id="@+id/btn_re_sync"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/seek_bar"
+        app:layout_constraintEnd_toStartOf="@id/btn_select_file"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <SeekBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/seek_bar"
+        app:layout_constraintBottom_toTopOf="@id/btn_record"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_file"
+        android:layout_above="@+id/btn_select_file"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_select_file"
+        android:textColor="#8258FA"
+        android:layout_margin="10dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
