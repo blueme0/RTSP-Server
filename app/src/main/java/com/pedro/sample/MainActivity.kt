@@ -28,13 +28,23 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, CameraDemoActivity::class.java))
       }
     }
+
+    val bFileDemo = findViewById<Button>(R.id.b_file_demo)
+
+    bFileDemo.setOnClickListener {
+      if (!hasPermissions(this, *permissions)) {
+        ActivityCompat.requestPermissions(this, permissions, 1)
+      } else {
+        startActivity(Intent(this, FileDemoActivity::class.java))
+      }
+    }
   }
 
   private fun hasPermissions(context: Context?, vararg permissions: String): Boolean {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null) {
       for (permission in permissions) {
         if (ActivityCompat.checkSelfPermission(context,
-              permission) != PackageManager.PERMISSION_GRANTED) {
+            permission) != PackageManager.PERMISSION_GRANTED) {
           return false
         }
       }
